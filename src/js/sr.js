@@ -1,5 +1,5 @@
 import assignProps from './assignProps';
-export default function() {
+export default () => {
   const defaultProps = {
     easing: 'cubic-bezier(0.5, 0, 0, 1)',
     distance: '30px',
@@ -63,7 +63,7 @@ export default function() {
   ScrollReveal().reveal('.project-wrapper__image', 
     assignProps(
       {
-        delay: 1000,
+        delay: 800,
         origin: window.innerWidth > 768 ? 'right' : 'bottom'
       }, defaultProps)
   );
