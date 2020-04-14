@@ -48,6 +48,19 @@
     }
   }
 
+  .tagline {
+    @include respond(phone) {
+      font-size: 2em;
+    }
+  }
+
+  .type-txt > .wrap {
+    border-right: 0.08em solid $primary-color; 
+    @include respond(phone) {
+      // font-size: 0.75em;
+    }
+  }
+
   .hero-cta {
     display: flex;
 
@@ -62,9 +75,5 @@
         font-size: 2rem;
       }
     }
-  }
-
-  .type-txt > .wrap {
-    border-right: 0.08em solid $primary-color; 
   }
 }
