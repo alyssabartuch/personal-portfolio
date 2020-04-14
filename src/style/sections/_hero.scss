@@ -75,5 +75,12 @@
         font-size: 2rem;
       }
     }
+    &:hover {
+      & svg {
+        fill: white;
+      }
+    }
   }
+
+  
 }
