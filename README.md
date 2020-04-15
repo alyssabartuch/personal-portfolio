@@ -15,4 +15,5 @@ Simplefolio is a clean and responsive portfolio template for Developers!
 Created by Jacobo Martinez.
 
 Github Repo: https://github.com/cobidev/simplefolio/
+
 For business & inquires, contact me -> cobimr@protonmail.com
