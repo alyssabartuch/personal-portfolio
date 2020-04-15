@@ -1,6 +1,6 @@
 ## Template Enhancements ✏️
 - Converted Javascript to modern syntax (let, const, arrow functions, classes, etc)
-- Created typing animation
+- Added typing animation the title tagline 
 - Removed tilt.js library (inconsistient performance on images)
 - Added scale() animation property on project images 
 
