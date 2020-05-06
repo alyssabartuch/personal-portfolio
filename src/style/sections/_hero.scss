@@ -55,10 +55,8 @@
   }
 
   .type-txt > .wrap {
+    padding-right: 5px;
     border-right: 0.08em solid $primary-color; 
-    @include respond(phone) {
-      // font-size: 0.75em;
-    }
   }
 
   .hero-cta {
