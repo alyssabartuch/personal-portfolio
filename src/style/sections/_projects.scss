@@ -9,6 +9,17 @@
     padding-top: 5rem;
   }
 
+  .conditional-margin {
+    margin-top: 8rem;
+    @include respond(phone) {
+      margin-top: 0rem;
+    }
+
+    @include respond(tab-port) {
+      margin-top: 0rem;
+    }
+  }
+
   .project-wrapper {
     margin-bottom: 15rem;
 
