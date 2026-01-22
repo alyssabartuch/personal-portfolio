@@ -9,6 +9,14 @@ module.exports = merge(common, {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
+  devServer: {
+    client: {
+      overlay: {
+        errors: true,
+        warnings: false
+      }
+    }
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/template.html',
@@ -22,7 +30,15 @@ module.exports = merge(common, {
         use: [
           'style-loader', //3. Inject styles into DOM
           'css-loader', //2. Turns css into commonjs
-          'sass-loader'
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+              sassOptions: {
+                quietDeps: true
+              }
+            }
+          }
         ] //1. Turns sass into css
       }
     ]

@@ -4,7 +4,7 @@ const merge = require('webpack-merge');
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = merge(common, {
@@ -15,7 +15,7 @@ module.exports = merge(common, {
   },
   optimization: {
     minimizer: [
-      new OptimizeCssAssetsPlugin(),
+      new CssMinimizerPlugin(),
       new TerserPlugin(),
       new HtmlWebpackPlugin({
         template: './src/template.html',
@@ -41,7 +41,15 @@ module.exports = merge(common, {
         use: [
           MiniCssExtractPlugin.loader, //3. Extract css into files
           'css-loader', //2. Turns css into commonjs
-          'sass-loader'
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: false,
+              sassOptions: {
+                quietDeps: true
+              }
+            }
+          }
         ] //1. Turns sass into css
       }
     ]

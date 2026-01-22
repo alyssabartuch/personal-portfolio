@@ -15,8 +15,10 @@ window.onload = () => {
   }
 };
 
-$('a[href^="#"]').on('click', (event) => {
-  const target = $(this.getAttribute('href'));
+$('a[href^="#"]').on('click', function (event) {
+  const href = this.getAttribute('href');
+  if (!href) return;
+  const target = $(href);
   if (target.length) {
     event.preventDefault();
     $('html, body')
